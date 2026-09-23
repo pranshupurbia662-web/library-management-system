@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Library Management System</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="navbar-inner">
+    <h1>📚 Library Management System</h1>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="card form-card">
+    <h2 id="form-title">Add New Book</h2>
+    <form id="book-form">
+      <input type="hidden" id="book-id">
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="title">Title *</label>
+          <input type="text" id="title" required maxlength="200" placeholder="e.g. Clean Code">
+        </div>
+        <div class="form-group">
+          <label for="author">Author *</label>
+          <input type="text" id="author" required placeholder="e.g. Robert C. Martin">
+        </div>
+        <div class="form-group">
+          <label for="isbn">ISBN *</label>
+          <input type="text" id="isbn" required placeholder="e.g. 9780132350884">
+        </div>
+        <div class="form-group">
+          <label for="genre">Genre</label>
+          <input type="text" id="genre" placeholder="e.g. Technology">
+        </div>
+        <div class="form-group">
+          <label for="quantity">Quantity *</label>
+          <input type="number" id="quantity" min="0" value="1" required>
+        </div>
+      </div>
+      <div id="form-errors" class="error-box hidden"></div>
+      <div class="form-actions">
+        <button type="submit" id="submit-btn" class="btn btn-primary">Add Book</button>
+        <button type="button" id="cancel-edit" class="btn btn-secondary hidden">Cancel</button>
+      </div>
+    </form>
+  </section>
+
+  <section class="card">
+    <div class="table-header">
+      <h2>Book Catalog</h2>
+      <div class="search-box">
+        <input type="text" id="search-input" placeholder="Search by title, author, ISBN, or genre...">
+        <button id="search-btn" class="btn btn-outline">Search</button>
+        <button id="clear-search" class="btn btn-outline hidden">Clear</button>
+      </div>
+    </div>
+
+    <div id="status-msg" class="status-msg hidden"></div>
+
+    <div class="table-wrapper">
+      <table id="books-table">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>ISBN</th>
+            <th>Genre</th>
+            <th>Available</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="books-tbody">
+          <!-- rows injected by script.js -->
+        </tbody>
+      </table>
+    </div>
+
+    <p id="empty-state" class="empty-state hidden">No books found. Try a different search or add a new book above.</p>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>Library Management System &mdash; Full Stack Virtual Internship Project</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

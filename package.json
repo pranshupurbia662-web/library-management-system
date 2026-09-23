@@ -1,0 +1,20 @@
+{
+  "name": "library-management-system",
+  "version": "1.0.0",
+  "description": "A full-stack Library Management System built with Node.js, Express, and SQLite. Supports CRUD operations, search, and validation for managing books.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node --experimental-sqlite server.js",
+    "dev": "node --experimental-sqlite server.js"
+  },
+  "keywords": ["library", "management", "system", "express", "sqlite"],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  }
+}
